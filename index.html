@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 class="value"></h3>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      const element = document.querySelector(".value");
+      function Greet() {
+        fetch("https://api.ipify.org/?format=json")
+          .then((response) => response.json())
+          .then((data) => element.textContent="Your Public IP - " + data.ip);
+      }
+      window.onload = Greet();
+    </script>
+  </body>
+</html>
